@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World news — Saturday 21 November 2026</title>
+  <style>
+    :root {
+      --paper: #fff9ea;
+      --ink: #102d2d;
+      --muted: #405450;
+      --rule: #b1b9ab;
+      --red: #922c24;
+      --green: #0e4b47;
+      --serif: Georgia, serif;
+      --sans: "Helvetica Neue", Arial, sans-serif;
+      --mono: Menlo, monospace;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); }
+    h1, h2, h3, p { margin: 0; }
+    .sheet {
+      width: 1024px;
+      height: 1024px;
+      padding: 17px 25px 12px;
+      display: grid;
+      grid-template-rows: 131px 60px 31px 251px 440px 61px 21px;
+    }
+    .masthead { border-top: 6px solid var(--ink); }
+    .edition {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 22px;
+      padding: 0 2px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 { font: bold 74px/.97 var(--serif); letter-spacing: -.061em; white-space: nowrap; }
+    .kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 800;
+    }
+    .kicker i { height: 5px; width: 5px; background: var(--red); transform: rotate(45deg); }
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      background: var(--green);
+      color: var(--paper);
+      align-items: center;
+    }
+    .numbers div { padding-left: 12px; border-left: 1px solid #59827b; }
+    .numbers div:first-child { border: 0; }
+    .numbers strong { display: block; font: bold 30px/.99 var(--serif); color: #fff1c5; }
+    .numbers span { display: block; margin-top: 3px; font-size: 11.5px; font-weight: 650; white-space: nowrap; }
+    .tally {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--ink);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .tally strong { color: var(--ink); font: bold 13px var(--mono); }
+    .tally b {
+      color: var(--paper);
+      background: var(--ink);
+      font-size: 12px;
+      letter-spacing: .08em;
+      padding: 3px 8px;
+      text-transform: uppercase;
+    }
+    .leads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; padding: 9px 0; }
+    .lead { min-width: 0; }
+    .lead + .lead { border-left: 1px solid var(--rule); padding-left: 12px; }
+    .lead svg { display: block; width: 100%; height: 112px; }
+    .lead .beat { margin: 7px 0 4px; }
+    .beat { color: var(--red); font-size: 11.6px; font-weight: 850; letter-spacing: .075em; text-transform: uppercase; }
+    .lead h2 { font: bold 28px/.98 var(--serif); letter-spacing: -.045em; margin-bottom: 5px; }
+    .lead p { font-size: 14.4px; line-height: 1.16; font-weight: 540; }
+    .source { color: var(--green); font-size: 10.5px; font-weight: 850; white-space: nowrap; }
+    .lead .source { display: block; margin-top: 5px; letter-spacing: .065em; text-transform: uppercase; }
+    .desks { display: grid; grid-template-columns: 52% 48%; border-top: 2px solid var(--ink); }
+    .cards-desk { padding: 8px 11px 4px 0; }
+    .section-title { font: bold 22px/1 var(--serif); letter-spacing: -.028em; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 5px; column-gap: 10px; }
+    .card {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 6px;
+      align-items: start;
+      min-width: 0;
+      height: 51px;
+      padding: 4px 1px 1px;
+      border-top: 1px solid var(--rule);
+    }
+    .card svg {
+      width: 32px;
+      height: 32px;
+      margin-top: 3px;
+      border-radius: 3px;
+      padding: 4px;
+      color: var(--green);
+      background: #e6e9d6;
+    }
+    .card:nth-child(3n+2) svg { color: #823824; background: #f4dfbe; }
+    .card:nth-child(3n) svg { color: #285578; background: #e0e8ea; }
+    .card .beat { font-size: 9.9px; letter-spacing: .035em; line-height: 1; white-space: nowrap; }
+    .card .source { margin-left: 4px; font-size: 9.2px; letter-spacing: 0; }
+    .card h3 { font: 800 16px/1.02 var(--sans); letter-spacing: -.022em; margin-top: 3px; }
+    .brief-desk { border-left: 1px solid var(--rule); padding: 8px 0 0 11px; }
+    .briefs { padding: 0; margin: 6px 0 0; list-style: none; }
+    .briefs li {
+      min-height: 18.1px;
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      align-items: center;
+      border-top: 1px solid #d1d2bf;
+      font-size: 15px;
+      line-height: 1.06;
+      letter-spacing: -.018em;
+    }
+    .briefs li:nth-child(even) { background: #f3eedf; }
+    .briefs .id { color: var(--red); font: bold 10.6px var(--mono); }
+    .briefs b { font-weight: 850; }
+    .briefs .source { margin-left: 3px; font-size: 9.4px; }
+    .world-map {
+      display: block;
+      width: 100%;
+      height: 128px;
+      margin: 3px 0 0;
+      border: 1px solid #aabfb4;
+      background: #e4eee6;
+    }
+    .world-map .grid { fill: none; stroke: #bdcfc2; stroke-width: .65; }
+    .world-map .land { fill: #a7bda8; stroke: #6b887c; stroke-width: .7; stroke-linejoin: round; }
+    .world-map .pin line { stroke: var(--red); stroke-width: 1.15; }
+    .world-map .pin circle:first-of-type { fill: var(--red); }
+    .world-map .pin circle:last-of-type { fill: var(--ink); stroke: var(--paper); stroke-width: 1; }
+    .world-map .pin text { fill: white; font: bold 9.4px var(--mono); text-anchor: middle; dominant-baseline: central; }
+    .map-caption { margin-top: 3px; color: var(--muted); font-size: 10px; letter-spacing: .065em; font-weight: 800; text-transform: uppercase; }
+    .date-check { display: grid; grid-template-columns: 124px 1fr; color: #fff9eb; background: var(--red); align-items: center; }
+    .date-check h2 { font: bold 22px/.93 var(--serif); padding: 0 12px; }
+    .date-check h2 span { display: block; font: 800 10px var(--sans); letter-spacing: .13em; margin-top: 4px; }
+    .date-check p { padding-right: 8px; font-size: 12.35px; line-height: 1.1; }
+    .date-check p b { color: #ffedaa; }
+    footer { display: flex; align-items: center; justify-content: space-between; font-size: 11px; font-weight: 650; }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <div class="edition"><span>World news in one image</span><span>Saturday edition</span></div>
+      <h1>Saturday 21 November 2026</h1>
+      <p class="kicker"><span>Tankers struck off Oman</span><i></i><span>Drones hit Russian freighter</span><i></i><span>Mercury orbit achieved</span><i></i><span>COP31 stalls</span></p>
+    </header>
+    <section class="numbers" aria-label="The day in six figures" id="numbers"></section>
+    <div class="tally" aria-label="Number of stories by region" id="tally"></div>
+    <section class="leads" aria-label="Lead stories">
+      <article class="lead" data-region="Middle East">
+        <svg viewBox="0 0 316 112" preserveAspectRatio="none" role="img" aria-label="Illustration of two tankers in the Strait of Hormuz">
+          <rect width="316" height="112" fill="#0d4b4c"/>
+          <path d="M0 0H316V12L281 19 248 14 219 24 207 42 182 49 154 42 142 54 103 49 70 33 42 31 22 19 0 21Z" fill="#e1ae69"/>
+          <path d="M0 0H316V7L273 12 251 7 210 20 193 33 165 35 150 29 130 42 102 39 73 26 44 24 24 11 0 13Z" fill="#f3d399"/>
+          <path d="M316 112H179L193 101 214 99 232 88 261 86 275 76 296 78 316 69Z" fill="#c58d55"/>
+          <path d="M316 112H215L228 103 260 97 277 85 299 87 316 80Z" fill="#edbe7f"/>
+          <path d="M7 61h47m5 0h17M19 92h56m11 0h20m16 0h52m30-29h36m8 0h22m-8-28h42m-8 19h20" fill="none" stroke="#84b9a9" stroke-width="1.3"/>
+          <path d="M55 72h94l16-6-7 13H68Z" fill="#f5e4b7"/>
+          <path d="M66 64h63v8H66z" fill="#e79b58"/>
+          <path d="M74 63h13v7H74m19-7h13v7H93m19-7h13v7h-13" fill="none" stroke="#432e2b"/>
+          <path d="M61 59h10v13H61zm3-6v8" fill="#fff0d2" stroke="#fff0d2" stroke-width="2"/>
+          <path d="M180 60h60l10-4-4 9h-61Z" fill="#ffedc5"/>
+          <path d="M185 54h43v6h-43z" fill="#e79b58"/>
+          <path d="M183 49h7v11h-7z" fill="#fff0d2"/>
+          <path d="M47 77H12m41 5H28m146-18h-20m79 7h-58" fill="none" stroke="#d4ece3" stroke-width="1.2"/>
+          <path d="M145 59l3-7 3 7 7 2-7 2-3 6-2-6-8-2zm91-11 2-5 2 5 6 2-6 1-2 5-2-5-6-1z" fill="#ffb36d" stroke="#602e28" stroke-width="1"/>
+          <text x="10" y="104" fill="#f4f3d9" font-family="Helvetica, sans-serif" font-weight="bold" font-size="10" letter-spacing="1.6">STRAIT OF HORMUZ</text>
+        </svg>
+        <div class="beat">01 / Oman · Shipping</div>
+        <h2>Hormuz tankers hit</h2>
+        <p>Projectiles hit two outbound tankers near Khasab. UKMTO reported no casualties. Iran separately claimed a tanker hit a mine.</p>
+        <span class="source">UKMTO · Reuters</span>
+      </article>
+      <article class="lead" data-region="Europe">
+        <svg viewBox="0 0 316 112" preserveAspectRatio="none" role="img" aria-label="Illustration of smoke rising over a cargo ship in the Gulf of Finland">
+          <rect width="316" height="112" fill="#c5dbea"/>
+          <path d="M0 45L27 43 44 46 62 39 83 42 100 39 120 41 151 35 171 43 190 40 225 43 249 35 272 40 288 36 316 41V76H0Z" fill="#8eacbd"/>
+          <path d="M0 57L26 51 49 53 77 48 91 53 115 50 128 55 158 51 181 55 209 50 248 54 272 49 300 52 316 48V112H0Z" fill="#3c6a80"/>
+          <path d="M0 71l58-3 35 5 71-4 60 3 49-6 43 4v42H0Z" fill="#275066"/>
+          <path d="M16 83h72m10 19h74m50-17h65m-61 12h42m10 0h30M21 98h41m190-33h58" fill="none" stroke="#8cb2bd" stroke-width="1.3"/>
+          <path d="M65 81h150l21-10-8 13-9 7H82Z" fill="#142b3b"/>
+          <path d="M86 86h137l-5 5H84Z" fill="#9f4935"/>
+          <path d="M78 65h29v16H78Z" fill="#e9e8d7"/>
+          <path d="M83 54h18v13H83z" fill="#fbf3dc"/>
+          <path d="M88 59h4m3 0h3m-10-5v-9m8 9v-5" stroke="#234456" stroke-width="1.8"/>
+          <path d="M109 74h105v7H109zm13-8h76v7h-76zm17-8h44v7h-44z" fill="#d2b477"/>
+          <path d="M122 74v7m16-7v7m15-7v7m15-7v7m15-7v7m15-7v7m-59-15v7m15-7v7m15-7v7m15-7v7m-30-15v7m15-7v7" stroke="#775646" stroke-width="1"/>
+          <path d="M157 59c3-9 12-11 8-16-5-7-3-11 6-15 7-4 8-10 3-16 13 3 18 10 16 16 19-3 32-13 25-22 19 1 32 13 27 25-5 14-37 9-51 16-8 4-14 11-19 14Z" fill="#52616a"/>
+          <path d="M154 62l2-10 4 3 5-8 4 7 6-4-3 12z" fill="#fc9850"/>
+          <text x="10" y="104" fill="#e8f3ee" font-family="Helvetica, sans-serif" font-weight="bold" font-size="10" letter-spacing="1.6">GULF OF FINLAND</text>
+        </svg>
+        <div class="beat">02 / Baltic Sea · War</div>
+        <h2>Drones hit Sparta II</h2>
+        <p>The Russian freighter caught fire en route to Kaliningrad and drifted into Finnish waters. All 16 crew were evacuated.</p>
+        <span class="source">Finnish Border Guard · AP · Reuters</span>
+      </article>
+      <article class="lead" data-region="Global">
+        <svg viewBox="0 0 316 112" preserveAspectRatio="none" role="img" aria-label="Illustration of BepiColombo flying into orbit around Mercury">
+          <defs>
+            <linearGradient id="mercury-light" x1="0" x2="1" y1=".1" y2=".8">
+              <stop stop-color="#f3c18c"/>
+              <stop offset=".65" stop-color="#b27159"/>
+              <stop offset="1" stop-color="#6a4b5d"/>
+            </linearGradient>
+          </defs>
+          <rect width="316" height="112" fill="#25283d"/>
+          <path d="M9 13h1m23 35h1m5-35h1m32 24h1m25-18h1m14 75h1m114-80h1m63 12h1m-33 62h1m41-18h1m-28 30h1m-225-14h1m65-62h1" stroke="#ffedce" stroke-width="2" stroke-linecap="round"/>
+          <path d="M73 80C71 64 120 35 181 19c54-15 105-19 109-7 5 15-40 41-101 58-56 16-111 25-116 10Z" fill="none" stroke="#d3a794" stroke-width="1.3" stroke-dasharray="3 3"/>
+          <circle cx="185" cy="53" r="43" fill="url(#mercury-light)"/>
+          <g fill="#7c534f" stroke="#e4ad83" stroke-width="1.1">
+            <ellipse cx="169" cy="29" rx="10" ry="6" transform="rotate(-29 169 29)"/>
+            <ellipse cx="197" cy="48" rx="13" ry="9" transform="rotate(19 197 48)"/>
+            <ellipse cx="160" cy="56" rx="5" ry="7" transform="rotate(-20 160 56)"/>
+            <ellipse cx="181" cy="72" rx="7" ry="5" transform="rotate(-19 181 72)"/>
+            <ellipse cx="208" cy="76" rx="8" ry="4" transform="rotate(-38 208 76)"/>
+          </g>
+          <path d="M73 80c5 15 60 6 116-10 45-13 83-30 97-45" fill="none" stroke="#fee0a9" stroke-width="1.35"/>
+          <g transform="translate(106 83) rotate(-25)">
+            <path d="M-29-5h21V5h-21zM8-5h21V5H8z" fill="#7fb7c7" stroke="#ecd9b7" stroke-width="1"/>
+            <path d="M-22-5V5m7-10V5m30-10V5m7-10V5M-9 0h18" stroke="#294767" stroke-width="1"/>
+            <path d="M-7-7H6l2 4v10H-7Z" fill="#f1c270" stroke="#fff3cc" stroke-width="1"/>
+            <path d="M-4-7c0-5 7-7 11-3L1-7Z" fill="#fff3cc"/>
+          </g>
+          <text x="10" y="104" fill="#fff0d2" font-family="Helvetica, sans-serif" font-weight="bold" font-size="10" letter-spacing="1.6">MERCURY ORBIT</text>
+        </svg>
+        <div class="beat">03 / Mercury · Science</div>
+        <h2>Mercury orbit reached</h2>
+        <p>ESA and JAXA’s BepiColombo entered Mercury orbit after eight years. Its stacked orbiters are due to separate in December.</p>
+        <span class="source">ESA · AP</span>
+      </article>
+    </section>
+    <div class="desks">
+      <section class="cards-desk">
+        <h2 class="section-title">Around the world</h2>
+        <div class="cards" id="cards"></div>
+        <svg class="world-map" viewBox="0 0 520 128" role="img" aria-label="Schematic world map with pins keyed to selected stories">
+          <path class="grid" d="M1 27H519M1 53H519M1 79H519M1 105H519M66 1v126m65-126v126m65-126v126m64-126v126m65-126v126m65-126v126m65-126v126"/>
+          <g class="land">
+            <path d="M12 38l18-7 23-1 10-9 25-1 10-7 17 3 5 9 12-5 15 2 24-6 28 4-5 11-15 6-7 11-19 2-4 6-13 5-10 10 2 9 12 7-3 4-11-4-10-11-6-9-12-5-5-12-15-9-13 3-9-2-18 4z"/>
+            <path d="M147 86l16-3 10 5 5 8 17 3 2 8-11 10-10 3-9 7-9-6 2-10-10-10zM176 70l9 2-4 5-8-1zM192 37l11 1-7 8-13 2zM201 13l23-7 22 2 1 10-15 12-21-5z"/>
+            <path d="M244 44l10-6-1-7 11 1 4-9 10-5 13 1 10-7 28 2 14-7 24 3 9 7 19-5 25 1 16 4 18-6 17 7 29-2 12 5-9 9-19 6-14 10-17 3-6 12-13 4-3 7-9-3-8-13-10 5-12 17-8-2-6-11-11-6-18 1-6 13-11-8-13-9-20-1-6-8-8 0-8 7-14-4z"/>
+            <path d="M249 58l17-7 16 0 16 5 10 8 14 4-10 8-4 9-9 5-2 12-11 12-10-8-3-14-8-7-8 2-10-8-3-13zM316 96l5-8 3 6-5 11-4 2z"/>
+            <path d="M414 78l10 2 10 8-12 1-16-5zM432 93l13 1 13 5-22-1zM457 88l12 1 8 6-14-1zM448 109l10-6 7-7 14 3 4-6 11 10 6 9-7 8-16 0-8-4-21 2zM503 117l6-4-2 7-9 7-4-2zM460 61l5-4 1-8 4-1 0 10-6 6z"/>
+            <path d="M257 32l4-7-4-7-4 6zM249 39l1-5-5 1-1 4z"/>
+          </g>
+          <g id="pins"></g>
+        </svg>
+        <p class="map-caption">Selected locations · Pins refer to story numbers</p>
+      </section>
+      <section class="brief-desk">
+        <h2 class="section-title">Also on Saturday 21 November</h2>
+        <ol class="briefs" id="briefs" start="14"></ol>
+      </section>
+    </div>
+    <aside class="date-check">
+      <h2>DATE<br>CHECK<span>LEFT OUT</span></h2>
+      <p><b>FRI 20 NOV</b> Kyiv bridge strikes · Akvan landfall · chip sell-off and US close · UK–EU summit · Italy strike · missile in Poland · Peru quake (local)<br>
+        <b>ALSO FRI</b> Denmark’s expulsion announcement · Germany–Qatar investment · Signal screenshot report · student protests<br>
+        <b>THU 19 NOV</b> Shenzhen declaration · Rohingya judgment · GTA VI launch<br>
+        <b>NOT YET</b> Sunday’s events · final COP31 outcome · BepiColombo orbiter separation · Nations Championship final</p>
+    </aside>
+    <footer><span>Every story happened or was first reported on Saturday 21 November 2026 in at least one time zone.</span><span>Original illustrations</span></footer>
+  </main>
+  <script>
+    const regions = ['Europe', 'Asia', 'Middle East', 'Africa', 'Americas', 'Oceania', 'Global'];
+    const icons = {
+      climate: 'M3 19h18M5 18v-5h3v5m2 0V9h3v9m2 0V4h4v14M4 9c1-3 3-4 6-4',
+      trade: 'M3 7h17m-4-4 4 4-4 4M21 17H4m4-4-4 4 4 4',
+      justice: 'M12 3v17m-6 1h12M4 6h16M7 6l-4 8h8zm10 0-4 8h8z',
+      energy: 'M14 2 5 14h6l-1 8 9-12h-6z',
+      talks: 'M3 5h18v12h-7l-4 4v-4H3zM7 10h10m-10 3h7',
+      quake: 'M2 13h4l2-4 3 8 3-12 3 10 2-2h3',
+      alarm: 'M12 3 2 20h20zM12 9v5m0 3h.01',
+      shield: 'm12 2 8 3v7c0 4-4 8-8 10-4-2-8-6-8-10V5zm-4 10 3 3 5-6',
+      house: 'm2 11 10-8 10 8M5 10v11h14V10m-9 11v-7h4v7',
+      ball: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 5 4 3-1.5 4h-5L8 11zm0 0V3m4 8 4-1m-5.5 5 2.5 4m-7.5-4L7 19m1-8-4-1'
+    };
+    const cards = [
+      ['Global', 'Antalya · Climate', 'COP31 overtime over fossil fuels', 'AP / Reuters', 'climate'],
+      ['Asia', 'Brussels · Trade', 'EU–Indonesia sign tariff-cut pact', 'EC / Kemlu', 'trade'],
+      ['Americas', 'Sinaloa · Justice', 'Mexico confirms El Chapo Isidro’s capture', 'AP / EFE', 'justice'],
+      ['Middle East', 'Basra · Energy', 'Deadly fire at Hartha power plant', 'Reuters / AA', 'energy'],
+      ['Global', 'Geneva · Diplomacy', 'Autonomous weapons talks end without treaty', 'AP / SWI', 'talks'],
+      ['Asia', 'Timor-Leste · Quake', 'Offshore quake felt in Darwin', 'USGS / AAP', 'quake'],
+      ['Middle East', 'Bahrain · War', 'Bahrain says Iranian strike set plant alight', 'Reuters / AJ', 'alarm'],
+      ['Europe', 'Kryvyi Rih · War', 'Russian missile strike kills two, officials say', 'AP / Hromadske', 'shield'],
+      ['Europe', 'Spain · Housing', 'Sánchez plans bank levy extension to fund housing', 'RTVE / Reuters', 'house'],
+      ['Africa', 'Abuja · Football', 'African football body adopts Kiswahili', 'CAF / VON', 'ball']
+    ];
+    const briefs = [
+      ['Middle East', 'Gaza', 'Israeli strike on food truck kills 3, officials say.', 'AP / AJ'],
+      ['Middle East', 'Riyadh', 'Coalition says it downed 3 Houthi missiles.', 'Reuters / AFP'],
+      ['Middle East', 'Iran', 'Tehran reports Friday talks with Qatari envoys.', 'AP / Reuters'],
+      ['Europe', 'Denmark', 'EU chief condemns alleged Russian murder plot.', 'EC / BT'],
+      ['Europe', 'France', 'Élysée pans latest EU budget proposal.', 'Reuters / AFP'],
+      ['Europe', 'Moldova', 'Ministry says drone entered airspace twice.', 'MoD / RM'],
+      ['Europe', 'Finland', 'Suspected Russian helicopter overflight.', 'DW / AJ'],
+      ['Asia', 'China', 'Li calls to speed Singapore trade talks.', 'Xinhua / RTHK'],
+      ['Asia', 'India', 'Youth Congress warns Meta of more protests.', 'Reuters / NIE'],
+      ['Asia', 'Bangladesh', 'BNP and Awami League clash in Pabna.', 'DS / DT'],
+      ['Africa', 'Algeria', 'Army reports killing 2 Moroccans at border.', 'Hespress / AFP'],
+      ['Africa', 'Nigeria', 'Bayelsa orders inquiry into boat disaster.', 'Reuters / Punch'],
+      ['Africa', 'Johannesburg', 'Level 2 water restrictions begin.', 'City / SABC'],
+      ['Africa', 'Somalia', 'Beledweyne airport stays shut after clashes.', 'Hiiraan / Goobjoog'],
+      ['Africa', 'South Africa', 'State funeral set for Mlambo-Ngcuka.', 'Gov.za / eNCA'],
+      ['Americas', 'Canada', 'US senator says curbs spare military ties.', 'AP / CP'],
+      ['Americas', 'Colombia', 'Confirms strike on FARC dissidents in Meta.', 'EE / Canal 1'],
+      ['Oceania', 'Victoria', 'Early ballots cast a week before state election.', 'VEC / ABC'],
+      ['Americas', 'Las Vegas', 'Verstappen wins Grand Prix.', 'FIA / AP'],
+      ['Oceania', 'Melbourne', 'Australia beats England by 3 wickets in T20.', 'ABC / AFP'],
+      ['Oceania', 'Wellington', 'Rahul hits 136 on day 3 against NZ.', 'AIR / HT'],
+      ['Africa', 'Rugby', 'South Africa reaches final after loss to Ireland.', 'AP / IOL']
+    ];
+    const numbers = [
+      ['2', 'Tankers hit · UKMTO'],
+      ['16', 'Crew off Sparta II · Finland'],
+      ['8 years', 'To Mercury orbit · ESA'],
+      ['98.5%', 'Tariff lines to lose duty · EC'],
+      ['M6.8', 'Timor-Leste quake · USGS'],
+      ['4+', 'Killed at Hartha · Reuters']
+    ];
+    const locations = [
+      [1, 338, 65, 364, 62],
+      [2, 302, 35, 305, 15],
+      [4, 303, 54, 322, 26],
+      [5, 435, 94, 416, 111],
+      [6, 115, 75, 106, 92],
+      [7, 324, 57, 347, 40],
+      [8, 267, 43, 234, 31],
+      [9, 452, 98, 467, 79],
+      [10, 331, 66, 343, 89],
+      [11, 300, 46, 288, 65],
+      [12, 253, 49, 226, 53],
+      [13, 274, 72, 260, 94],
+      [24, 252, 60, 223, 76],
+      [27, 310, 81, 323, 104],
+      [29, 166, 46, 183, 56],
+      [30, 161, 89, 147, 110],
+      [32, 101, 57, 82, 51],
+      [33, 483, 117, 472, 104],
+      [34, 505, 121, 506, 100]
+    ];
+
+    const storyNumber = number => String(number).padStart(2, '0');
+    document.querySelector('#cards').innerHTML = cards.map(([region, place, title, source, icon], index) => `
+      <article class="card" data-region="${region}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[icon]}" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="beat">${storyNumber(index + 4)} / ${place}<span class="source">· ${source}</span></div><h3>${title}</h3></div>
+      </article>`).join('');
+    document.querySelector('#briefs').innerHTML = briefs.map(([region, place, headline, source], index) => `
+      <li data-region="${region}"><span class="id">${storyNumber(index + 4 + cards.length)}</span><span><b>${place}</b> ${headline}<span class="source">· ${source}</span></span></li>`).join('');
+    document.querySelector('#numbers').innerHTML = numbers.map(([value, label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join('');
+    const stories = [...document.querySelectorAll('[data-region]')];
+    document.querySelector('#tally').innerHTML = `<b>${stories.length} stories</b>` + regions.map(region =>
+      `<span>${region} <strong>${stories.filter(story => story.dataset.region === region).length}</strong></span>`).join('');
+    document.querySelector('#pins').innerHTML = locations.map(([id, x, y, labelX, labelY]) => `
+      <g class="pin"><line x1="${x}" y1="${y}" x2="${labelX}" y2="${labelY}"/><circle cx="${x}" cy="${y}" r="2.2"/>
+        <circle cx="${labelX}" cy="${labelY}" r="9"/><text x="${labelX}" y="${labelY}">${storyNumber(id)}</text></g>`).join('');
+  </script>
+</body>
+</html>
