@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saturday 21 November 2026 | World News</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f6efdc;
+    --ink: #142b34;
+    --rust: #9d2c21;
+    --muted: #40565c;
+    --line: #afa992;
+    --teal: #174d50;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); background: var(--paper); font: 16px Arial, sans-serif; }
+  .page {
+    width: 1024px;
+    height: 1024px;
+    padding: 22px 24px;
+    display: grid;
+    grid-template-rows: 111px 65px 28px 225px 217px 231px 58px 17px;
+    gap: 4px;
+  }
+  h1, h2, h3, p, figure { margin: 0; }
+  .masthead { border-top: 7px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .strap { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; font-weight: 800; margin-top: 6px; }
+  h1 { font: 800 66px/.98 Georgia, serif; letter-spacing: -3.5px; }
+  .dek { font-size: 17px; font-weight: 700; margin-top: 3px; color: var(--teal); }
+  .metrics { display: grid; grid-template-columns: repeat(6, 1fr); align-items: center; background: var(--ink); color: var(--paper); }
+  .metrics p { padding: 1px 0 2px 12px; border-left: 1px solid #657374; }
+  .metrics p:first-child { border: 0; }
+  .metrics strong { display: block; font: 700 30px/.93 Georgia, serif; color: #f9d696; }
+  .metrics span, .metrics small { display: block; }
+  .metrics span { font-size: 12px; font-weight: 700; margin-top: 3px; }
+  .metrics small { font-size: 9px; color: #e2dbce; }
+  .tally { display: flex; align-items: center; justify-content: space-between; gap: 7px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .tally strong { text-transform: uppercase; font-size: 13px; letter-spacing: .08em; }
+  .tally span { font-weight: 700; }
+  .tally b { color: var(--rust); padding-left: 4px; }
+  .leads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; padding: 4px 0 0; }
+  .lead { min-width: 0; min-height: 0; }
+  .lead .art { width: 100%; height: 99px; display: block; }
+  .lead h2 { font: 700 28px/1 Georgia, serif; margin: 5px 0; letter-spacing: -.75px; }
+  .lead > p:not(.beat) { font-size: 15.2px; line-height: 1.13; }
+  .lead .beat { margin-top: 5px; font-size: 11px; }
+  .lead .source { display: block; margin-top: 3px; line-height: 1; }
+  .beat { display: flex; align-items: center; gap: 6px; color: var(--teal); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+  .num { font: 700 11px/1 Arial, sans-serif; color: white; padding: 3px 4px; background: var(--rust); }
+  .source { color: var(--muted); font-size: 10px; font-weight: 700; }
+  .cards { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 5px 8px; padding: 3px 0 0; }
+  .card { background: #ebe3ce; border-top: 2px solid var(--teal); padding: 4px 7px; min-width: 0; }
+  .card header { display: flex; align-items: center; justify-content: space-between; gap: 2px; margin-bottom: 2px; }
+  .card header .beat { letter-spacing: .035em; }
+  .card svg { width: 24px; height: 18px; flex: none; fill: none; stroke: var(--teal); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .card h3 { font: 700 17.8px/1 Georgia, serif; letter-spacing: -.18px; margin: 0 0 3px; }
+  .card > p { font-size: 11.7px; line-height: 1.13; }
+  .card .source { display: block; margin-top: 3px; font-size: 9px; }
+  .below { display: grid; grid-template-columns: 3.3fr 1fr; gap: 10px; border-top: 2px solid var(--ink); padding-top: 5px; }
+  .below h2 { font: 700 20px/1.05 Georgia, serif; }
+  .briefs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 4px; }
+  .briefs ol { margin: 0; padding: 0; list-style: none; }
+  .briefs li { display: flex; align-items: baseline; gap: 5px; border-top: 1px solid var(--line); padding: 2px 0 1px; font-size: 12.2px; line-height: 1; min-height: 23px; }
+  .briefs strong { color: var(--rust); font-weight: 800; }
+  .briefs b { font-weight: 800; }
+  .briefs .source { font-size: 9px; white-space: nowrap; }
+  .atlas { padding-left: 8px; border-left: 1px solid var(--line); min-width: 0; }
+  .atlas h2 { margin: 0 0 4px; }
+  .atlas figure { background: #dce7dc; }
+  .atlas svg { width: 100%; height: 122px; display: block; }
+  .chrono { margin-top: 4px; font-size: 11px; line-height: 1.22; }
+  .chrono h3 { font-size: 10px; text-transform: uppercase; letter-spacing: .11em; color: var(--teal); }
+  .chrono time { font-weight: 800; color: var(--rust); }
+  .datecheck { padding: 6px 10px; background: var(--rust); color: #fffaf0; font-size: 11.6px; line-height: 1.31; }
+  .datecheck b { color: #ffdb9f; }
+  .datecheck strong { text-transform: uppercase; letter-spacing: .08em; margin-right: 6px; }
+  footer { font-size: 10.5px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+</style>
+
+<main class="page">
+  <header class="masthead">
+    <p class="strap">World news in one image</p>
+    <h1>Saturday 21 November 2026</h1>
+    <p class="dek">Tankers struck off Oman · Russian freighter ablaze · Climate talks stall · Mercury orbit reached</p>
+  </header>
+
+  <section class="metrics" aria-label="The day in six figures">
+    <p><strong>2</strong><span>Tankers struck off Oman</span><small>UKMTO</small></p>
+    <p><strong>16</strong><span>Sparta II crew rescued</span><small>Finnish Border Guard</small></p>
+    <p><strong>2nd day</strong><span>Of climate-talk overtime</span><small>AP</small></p>
+    <p><strong>8 years</strong><span>BepiColombo’s cruise</span><small>ESA / AP</small></p>
+    <p><strong>M6.8</strong><span>Quake off Timor-Leste</span><small>USGS</small></p>
+    <p><strong>2028</strong><span>UN arms-talks target</span><small>AP / Reuters</small></p>
+  </section>
+  <section class="tally" aria-label="Stories by region">
+    <strong>33 stories</strong><span>Europe <b>7</b></span><span>Asia <b>5</b></span><span>Middle East <b>6</b></span><span>Africa <b>3</b></span><span>Americas <b>6</b></span><span>Oceania <b>3</b></span><span>Global <b>3</b></span>
+  </section>
+
+  <section class="leads" aria-label="Lead stories">
+    <article class="lead">
+      <svg class="art" viewBox="0 0 320 100" preserveAspectRatio="none" role="img" aria-label="Illustration of two tankers between the shores of the Strait of Hormuz">
+        <rect width="320" height="100" fill="#175358"/>
+        <path d="M0 0h320v17l-44 1-31 12-36-2-43 11-28-10-29 1-30-12-27 2-52-9Z" fill="#dfab67"/>
+        <path d="M0 100V69l47-9 18 10 25 3 15 13 31-1 28 15Z" fill="#d08a51"/>
+        <path d="M15 53q43-20 80-10t83 2m-35 47q48-22 86-17t77-20" fill="none" stroke="#97bfaa" stroke-width="2" stroke-dasharray="4 6"/>
+        <g transform="translate(81 32) rotate(11 53 13)">
+          <path d="M1 9h96l12 7-14 10H12Z" fill="#f8e6bd"/>
+          <path d="M12 11h20v11H12Zm27 0h18v11H39Zm22 0h18v11H61Zm22 0h10l10 5-10 6H83Z" fill="#23555b"/>
+          <path d="M11 7h16v14H11Z" fill="#c95a3f"/>
+        </g>
+        <g transform="translate(184 57) rotate(-13 50 12)">
+          <path d="M0 5h98l13 8-15 10H13Z" fill="#f8e6bd"/>
+          <path d="M13 7h15v14H13Z" fill="#c95a3f"/>
+          <path d="M34 9h15v10H34Zm19 0h15v10H53Zm19 0h15v10H72Zm19 0h7l6 4-6 6h-7Z" fill="#23555b"/>
+        </g>
+        <circle cx="155" cy="51" r="7" fill="#f9c688" stroke="#9d2c21" stroke-width="2"/>
+        <circle cx="259" cy="66" r="7" fill="#f9c688" stroke="#9d2c21" stroke-width="2"/>
+        <text x="263" y="13" fill="#382a22" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="1">IRAN</text>
+        <text x="15" y="87" fill="#34281d" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="1">KHASAB</text>
+      </svg>
+      <p class="beat"><span class="num">01</span> Strait of Hormuz · Shipping</p>
+      <h2>Tankers hit off Oman</h2>
+      <p>UKMTO says unidentified projectiles struck two tankers near Khasab. Both crews were reported safe.</p>
+      <small class="source">UKMTO · Reuters</small>
+    </article>
+    <article class="lead">
+      <svg class="art" viewBox="0 0 320 100" preserveAspectRatio="none" role="img" aria-label="Illustration of the Sparta II freighter trailing smoke in the Gulf of Finland">
+        <rect width="320" height="100" fill="#cbd6cb"/>
+        <path d="M0 28 42 20 57 24 93 19l17 9 33-5 32 8h145v43H0Z" fill="#839f98"/>
+        <path d="M0 62h320v38H0Z" fill="#31646c"/>
+        <path d="M0 87q36-8 75 0t74 0 80 1 91-4M192 95q50-8 97 0" fill="none" stroke="#80a7a3" stroke-width="2"/>
+        <path d="M36 66h244l-25 20H75L47 78Z" fill="#182f3b"/>
+        <path d="M68 76h200l-13 10H75Z" fill="#b54a3b"/>
+        <path d="M60 65V45h40v20m9 0V53h28v12m5 0V51h29v14m5 0V57h27v8m5 0V50h32v15" fill="#e7d4a8"/>
+        <path d="M74 51h19m-14-6V34h12m39 19V39m99 11V37" fill="none" stroke="#173642" stroke-width="3"/>
+        <path d="M146 56c-10-11 7-16 2-28 12 8 17 14 23 26-1-11 9-9 8-20 13 16 6 21 3 29Z" fill="#be4a33"/>
+        <path d="M163 36c3-17 17-24 34-22 12-13 35-9 46-7 14-7 30-6 53 0-13 4-26 16-49 13-13 7-22 8-36 6-22 10-36 9-48 10Z" fill="#465961" opacity=".88"/>
+        <text x="16" y="16" fill="#173642" font-family="Arial" font-size="10" font-weight="bold" letter-spacing="1">GULF OF FINLAND</text>
+      </svg>
+      <p class="beat"><span class="num">02</span> Gulf of Finland · Russia’s war</p>
+      <h2>Drones hit Sparta II</h2>
+      <p>The Russian freighter caught fire and drifted into Finnish waters. All 16 crew were rescued. Finland suspects Ukraine.</p>
+      <small class="source">Finnish Border Guard · Reuters · Al Jazeera</small>
+    </article>
+    <article class="lead">
+      <svg class="art" viewBox="0 0 320 100" preserveAspectRatio="none" role="img" aria-label="Illustration of an empty climate negotiating table with coal, oil and gas on the agenda">
+        <rect width="320" height="100" fill="#eac388"/>
+        <path d="M0 50 36 40 103 47 152 36l66 10 71-8 31 12v50H0Z" fill="#dca260"/>
+        <path d="M31 82 100 27h120l71 55-35 18H63Z" fill="#774f3e"/>
+        <path d="M39 77 103 28h114l66 49-30 12H67Z" fill="#213e42"/>
+        <path d="m133 71 8-32 29-2 15 29Z" fill="#f5e6ba"/>
+        <path d="m145 46 22-2m-24 10 26-3m-29 12 34-4" stroke="#70665f" stroke-width="1.5"/>
+        <path d="m111 73 98-25 2 5-98 25Z" fill="#bb4c33"/>
+        <path d="m76 64 10-6 20 3-11 8Zm153 7 9-7 21 5-10 8Zm-113-37 21-2-3 5-22 3Zm77-4 18 1 7 8-19-1Z" fill="#c7b993"/>
+        <path d="m94 59 7-10 6 1m131 14-8-12-7 1m-96-18 6-11h5m67 9-5-10h-6" fill="none" stroke="#f6e4b2" stroke-width="2" stroke-linecap="round"/>
+        <path d="M68 33h28l-13 10H55Zm158 0h27l13 10h-27ZM32 55h30L47 67H19Zm226 0h31l14 12h-30Z" fill="#f3d8a5" stroke="#774f3e" stroke-width="2"/>
+        <text x="160" y="19" fill="#2f3531" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" letter-spacing="1.6">COAL · OIL · GAS</text>
+      </svg>
+      <p class="beat"><span class="num">03</span> Antalya · UN climate talks</p>
+      <h2>COP31 in overtime</h2>
+      <p>Climate talks dragged into Saturday. The EU and island nations opposed a draft that left out fossil fuels.</p>
+      <small class="source">AP · Reuters</small>
+    </article>
+  </section>
+
+  <section class="cards" aria-label="Ten more headlines">
+    <article class="card">
+      <header><p class="beat"><span class="num">04</span> Space · Science</p><svg viewBox="0 0 32 28" aria-hidden="true"><circle cx="16" cy="14" r="8"/><ellipse cx="16" cy="14" rx="15" ry="5" transform="rotate(-28 16 14)"/><circle cx="25" cy="5" r="2" fill="#9d2c21" stroke="none"/></svg></header>
+      <h3>BepiColombo orbits Mercury</h3><p>ESA and JAXA’s twin probes arrive after eight years.</p><small class="source">ESA · AP · Nature</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">05</span> Indonesia · Trade</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M3 7h19l6 6H9Zm26 14H10l-6-6h19ZM22 3v4m-12 14v4"/><path d="M12 10h8m-8 8h8" stroke="#9d2c21"/></svg></header>
+      <h3>EU and Indonesia sign trade pact</h3><p>Brussels signing also covers investment protection.</p><small class="source">EU Commission · Antara</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">06</span> Geneva · UN talks</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M6 3h19v21H6Zm4 6h11m-11 4h11m-11 4h5"/><path d="M23 16v8m-4-4h8" stroke="#9d2c21"/></svg></header>
+      <h3>Weapons treaty stalls</h3><p>UN talks on autonomous arms continue through 2028.</p><small class="source">AP · Reuters</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">07</span> Mexico · Justice</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M16 4v20m-7 1h14M5 9h22M6 9l-4 9h8Zm20 0-4 9h8Z"/><circle cx="16" cy="6" r="2" fill="#9d2c21" stroke="none"/></svg></header>
+      <h3>Mexico confirms Isidro arrest</h3><p>Cartel leader was held after a Friday-night Sinaloa raid.</p><small class="source">AP · El Informador</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">08</span> Iraq · Energy</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M3 24h26m-24 0V15l8-5v6l8-6v14m2-14 1-6h4l1 20"/><path d="m10 21 3-3m3 3 3-3" stroke="#9d2c21"/></svg></header>
+      <h3>Basra power plant fire</h3><p>Iraqi officials report four dead and 35 injured at Hartha.</p><small class="source">QNA · Anadolu</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">09</span> Gaza · Aid</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M3 8h16v13H3Zm16 5h7l4 4v4H19Z"/><circle cx="9" cy="22" r="3" fill="#ebe3ce"/><circle cx="25" cy="22" r="3" fill="#ebe3ce"/><path d="M8 13h6m-3-3v6" stroke="#9d2c21"/></svg></header>
+      <h3>Food truck hit in Gaza</h3><p>Gaza health officials say an Israeli strike killed three.</p><small class="source">Reuters · Ahram Online</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">10</span> Timor-Leste · Quake</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M2 16h6l3-7 4 14 4-19 4 12h7"/><path d="M3 25h26" stroke="#9d2c21"/></svg></header>
+      <h3>Major quake off Timor</h3><p>A magnitude 6.8 shock struck northeast of Lospalos.</p><small class="source">USGS · BMKG</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">11</span> Nigeria · Safety</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M3 15h25l-5 6H8Zm8-2V4l10 9ZM2 25q4-3 7 0t7 0 7 0 7 0"/><path d="M10 8h7" stroke="#9d2c21"/></svg></header>
+      <h3>Bayelsa orders boat probe</h3><p>Governor orders inquiry into Friday’s fatal capsize.</p><small class="source">Punch · Channels TV · AP</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">12</span> Spain · Housing</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="m3 12 13-8 13 8ZM6 24h20m-17-9v7m7-7v7m7-7v7"/><path d="M2 26h28" stroke="#9d2c21"/></svg></header>
+      <h3>Spain to extend bank levy</h3><p>Sánchez says 2027 proceeds will fund housing.</p><small class="source">RTVE · Europa Press</small>
+    </article>
+    <article class="card">
+      <header><p class="beat"><span class="num">13</span> Brazil · Health</p><svg viewBox="0 0 32 28" aria-hidden="true"><path d="M4 5h24v18H4Zm3 20h18"/><path d="M7 14h5l2-5 4 10 2-5h5" stroke="#9d2c21"/></svg></header>
+      <h3>Bolsonaro taken to ICU</h3><p>Brasília hospital reports the ex-president’s transfer.</p><small class="source">Agência Brasil · Reuters</small>
+    </article>
+  </section>
+
+  <section class="below">
+    <div>
+      <h2>Also on Saturday 21 November</h2>
+      <div class="briefs">
+        <ol start="14">
+          <li><strong>14</strong><span><b>Bahrain</b> blames Iran for fire at a civilian industrial site. <small class="source">AJ / Reuters</small></span></li>
+          <li><strong>15</strong><span><b>Saudi coalition</b> says it intercepted Houthi missiles aimed at Riyadh. <small class="source">SPA / AJ</small></span></li>
+          <li><strong>16</strong><span><b>Iran</b> discloses Qatari mediation talks held Friday night. <small class="source">Reuters / Sawa</small></span></li>
+          <li><strong>17</strong><span><b>EU</b> condemns a foiled plot to kill a US-Ukrainian in Denmark. <small class="source">EC / Reuters</small></span></li>
+          <li><strong>18</strong><span><b>France</b> criticises the new EU long-term budget proposal. <small class="source">Reuters / TT</small></span></li>
+          <li><strong>19</strong><span><b>Moldova</b> says a drone entered its airspace twice. <small class="source">Moldpres / EODI</small></span></li>
+          <li><strong>20</strong><span><b>Finland</b> reports a suspected Russian helicopter incursion. <small class="source">Yle / DW</small></span></li>
+        </ol>
+        <ol start="21">
+          <li><strong>21</strong><span><b>Philippines</b> Naga votes for highly urbanised status. <small class="source">TV5 / TGF</small></span></li>
+          <li><strong>22</strong><span><b>Indonesia</b> candy factory catches fire in Banten. <small class="source">AP / Antara</small></span></li>
+          <li><strong>23</strong><span><b>Western China</b> shaken by a magnitude 5.9 quake. <small class="source">USGS / GDACS</small></span></li>
+          <li><strong>24</strong><span><b>Somalia</b> shuts Beledweyne airport after a clash. <small class="source">Hiiraan / DNE</small></span></li>
+          <li><strong>25</strong><span><b>South Africa</b> confirms state funeral for Mlambo-Ngcuka. <small class="source">Presidency / SABC</small></span></li>
+          <li><strong>26</strong><span><b>California</b> sheriff says nine shot at a private party. <small class="source">ABC / UnoTV</small></span></li>
+          <li><strong>27</strong><span><b>Southern Brazil</b> officials confirm fifth death after storm. <small class="source">G1 / Correio</small></span></li>
+        </ol>
+        <ol start="28">
+          <li><strong>28</strong><span><b>Canada</b> says it knows of no shift in US defence ties. <small class="source">Reuters / Global</small></span></li>
+          <li><strong>29</strong><span><b>Cardiff</b> Australia beats Wales 29–26 in rugby. <small class="source">RA / Sky</small></span></li>
+          <li><strong>30</strong><span><b>Las Vegas</b> Grand Prix goes to Max Verstappen. <small class="source">F1 / AP</small></span></li>
+          <li><strong>31</strong><span><b>Melbourne</b> Australia beats England by 3 wickets in T20. <small class="source">ABC / SuperSport</small></span></li>
+          <li><strong>32</strong><span><b>Wellington</b> Rahul hits 136 as India reach 486–4. <small class="source">PTI / AFP</small></span></li>
+          <li><strong>33</strong><span><b>Dublin</b> Ireland beats South Africa 20–17 in rugby. <small class="source">RTÉ / Reuters</small></span></li>
+        </ol>
+      </div>
+    </div>
+    <aside class="atlas">
+      <h2>Map of stories 01–13</h2>
+      <figure>
+        <svg viewBox="0 0 221 134" role="img" aria-label="World map with pinned numbers matching the three leads and ten headlines. Number 04 represents Mercury.">
+          <path d="M0 28h221M0 55h221M0 82h221m-221 27h221M28 0v134M55 0v134M83 0v134M110 0v134M138 0v134M166 0v134m27-134v134" fill="none" stroke="#c1d0c6" stroke-width=".7"/>
+          <path d="m16 28 19-13 19 4 13-7 22 4-9 14-18 8-6 13-11 6 4 9 14 3-6 6-12-4-13-17-15-5L6 36Zm48 48 14-3 20 13-3 10-11 10-4 13-10 8-2-20-7-14Zm13-61 17-8 13 1 1 14-11 13-10-2Zm28 32 11-13 11-2 3-13 22-7 9 4 23-1 18 5 19 12-1 9-15 3-7 11-12 4-5 10-11-4-3 16-8-5-10-17-16-4-13 1-4-7Zm6 13 16-5 18 12 1 9-9 6-3 15-7 7-7-17-12-13Zm44 33 3 5-6 8-2-4Zm13-15 15 10 13-1 8 7-12 1-16-7Zm16 29 17-7 10 11 4 10-10 4-8-5-13 1-6-6Zm28 18 6-7 3 4-6 10Z" fill="#83a49a" stroke="#688f83" stroke-width=".6"/>
+          <path d="m147 68 9 11m-26-43 5-16m-1 33 8-6m39 46-7 13m-53-61-11-10m-65 32-12 5m109-14 13-1m-18 4-15 9m67 22 3 7m-73-22-15 19m8-43-13 2m-21 49-6 12" fill="none" stroke="#334f52" stroke-width="1"/>
+          <g fill="#9d2c21" stroke="#fcf3db" stroke-width="1">
+            <circle cx="156" cy="79" r="8"/><circle cx="135" cy="20" r="8"/><circle cx="142" cy="47" r="8"/><circle cx="206" cy="10" r="8"/>
+            <circle cx="174" cy="106" r="8"/><circle cx="110" cy="35" r="8"/><circle cx="33" cy="72" r="8"/><circle cx="155" cy="57" r="8"/>
+            <circle cx="122" cy="70" r="8"/><circle cx="192" cy="99" r="8"/><circle cx="104" cy="96" r="8"/><circle cx="99" cy="55" r="8"/><circle cx="72" cy="116" r="8"/>
+          </g>
+          <g fill="#fff9e9" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold">
+            <text x="156" y="82">01</text><text x="135" y="23">02</text><text x="142" y="50">03</text><text x="206" y="13">04</text>
+            <text x="174" y="109">05</text><text x="110" y="38">06</text><text x="33" y="75">07</text><text x="155" y="60">08</text>
+            <text x="122" y="73">09</text><text x="192" y="102">10</text><text x="104" y="99">11</text><text x="99" y="58">12</text><text x="72" y="119">13</text>
+          </g>
+          <path d="M182 10h14" stroke="#9d2c21" stroke-width="1"/>
+          <text x="180" y="13" text-anchor="end" fill="#174d50" font-family="Arial" font-weight="bold" font-size="8">MERCURY</text>
+        </svg>
+      </figure>
+      <div class="chrono">
+        <h3>Saturday in UTC</h3>
+        <p><time>05:00</time> First tanker hit near Khasab</p>
+        <p><time>06:50</time> Finland alerted to ship strike</p>
+        <p><time>09:42</time> Quake off Timor-Leste</p>
+        <p><time>18:24</time> Mercury orbit-entry burn begins</p>
+      </div>
+    </aside>
+  </section>
+
+  <aside class="datecheck" aria-label="Date check">
+    <p><strong>Date check · Left out</strong> <b>Fri 20 Nov</b> Kyiv bridge strikes, Akvan landfall, chip sell-off and Wall Street close, UK–EU summit, Italy strike, youth protests, missile in Poland, Peru quake, Danish expulsion, German–Qatari pact, UN education funding.</p>
+    <p><b>Thu 19 Nov</b> Shenzhen declaration, ICJ Myanmar judgment, GTA VI launch. <b>Not yet</b> Sunday’s stories, COP31 outcome, December orbiter separation, Nations Championship final.</p>
+  </aside>
+  <footer><span>Every numbered story happened, or was first reported, on Saturday 21 November 2026 in at least one time zone.</span><span>Original illustrations</span></footer>
+</main>
+</html>
